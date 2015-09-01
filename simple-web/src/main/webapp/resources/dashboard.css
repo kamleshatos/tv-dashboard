@@ -1,0 +1,49 @@
+/* created by Kamlesh  */
+.badge-danger {
+  background-color: #d43f3a;
+}
+
+.badge-warning {
+  background-color: #d58512;
+}
+
+.badge-success {
+  background-color: #398439;
+}
+
+.badge-error {
+  background-color: #b94a48;
+}
+
+.badge-info {
+  background-color: #269abc;
+}
+
+.badge-inverse {
+  background-color: #333333;
+}
+
+/* other than given css */
+.circle-red {
+    background: #d43f3a;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+}
+.circle-green{
+	background: #398439;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;	
+}
+
+.rcorners1 {
+    border-radius: .25em;
+    background: #8AC0FF;
+    text-align:left;
+    color:#303030;
+    padding-left:1em;
+}
+.borderless td, .borderless th {
+    border: none !important;
+}

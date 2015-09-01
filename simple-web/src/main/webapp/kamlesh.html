@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<!-- Latest compiled and minified CSS -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+	<!-- Optional theme -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+
+	<!-- Latest compiled and minified JavaScript -->
+	<!--<<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+	<!-- Added from cloudsole dashboard -->
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>CloudSole Metrics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="resources/bootstrap.css" rel="stylesheet">
+    <link href="resources/metrics.css" rel="stylesheet" media="screen">
+    <link href="resources/dashboard.css" rel="stylesheet" media="screen">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="resources/moment.js"></script>
+    <script src="resources/easypiechart.js"></script>
+    <script src="resources/gauge.js"></script>
+    <script src="resources/chart.js"></script>
+    <script src="resources/jquery.sparklines.js"></script>
+    <script src="resources/bootstrap.js"></script>
+    <script src="resources/metrics-plugins.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="resources/respond.min.js"></script>
+    <script src="resources/excanvas.min.js"></script>
+    <![endif]-->
+
+    <script src="resources/sockjs.js"></script>
+    <script src="resources/stomp.js"></script>
+
+    <script>
+        var themeColour = 'black';
+
+    </script>
+    <script src="resources/metrics.js"></script>
+    <script src="resources/app.js"></script>
+
+
+
+
+
+	<style type="text/css">
+	body{background: #000000;}
+
+	
+	</style>
+	<script type="text/javascript">
+	function changeColor(id,bgcolor){
+		alert("function get called " + id);
+		document.querySelector('#'+id).style.backgroundColor=bgcolor;
+	}
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="row-lg-height">
+
+		<div class='col-xs-6 col-sm-3 col-lg-6 col-lg-top'>
+			<div class="panel panel-primary" style="width:auto; margin:10px">
+				<div class="panel-heading">
+  					<h3 class="panel-title">Cloud Fabric</h3>    
+  				</div> 
+
+				<div class="panel-body"  style="margin:0px;">
+					<div class="panel-heading rcorners1">
+        				<h4 class="panel-title">Production</h4>
+        			</div> 
+
+
+					<div class="table-responsive">
+						<table class="table no-margin">
+
+					        <thead>
+					            <tr>
+					                <th style="width:20%"><p class='text-center'>Host</p></th>
+					                <th class="hidden-sm"><p class='text-center'>State</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Services</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Application Availability</p></th>
+					            </tr>
+					        </thead>
+        					<tbody>
+
+            					<tr>
+                					<td><br><span class="name">Server 1</span></td>
+									<td class="hidden-sm" style="font-size:20px"><br>
+										<div class="circle-red"></div> 
+									</td>
+              
+                					<td class="hidden-sm">
+			                  <table class="table no-margin">
+			                    <thead style="font-size:10px;">
+			                      <tr>
+			                        <th>ok</th>
+			                        <th>Warning</th>
+			                        <th>Unknown</th>
+			                        <th>Critical</th>
+			                      </tr>
+			                    </thead>
+			                    <tbody style="font-size:1.9em;">
+			                      <tr>
+			                        <td><span class="label label-success label-as-badge">156</span></td>
+			                        <td><span class="label label-warning">165</span></td>
+			                        <td><span class="label label-default">156</span></td>
+			                        <td><span class="label badge-error">156</span></td>
+			                      </tr>
+			                    </tbody>
+			                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+            
+            <tr>
+                <td> <span class="name">Server 2</span>
+
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"></div>
+                <td class="hidden-sm"> 
+ <table class="table borderless no-margin">
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label badge-error label-as-badge">SLA = 97.06 %</span></td>
+                
+            </tr>
+			<tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table  borderless no-margin">
+                    
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+	</div>  
+</div>
+</div>
+		<div class='col-xs-6 col-sm-6  col-lg-6'>
+			<div class="panel panel-primary" style="width:auto; margin:10px">
+				<div class="panel-heading">
+  					<h3 class="panel-title">Cloud Fabric</h3>    
+  				</div> 
+
+				<div class="panel-body"  style="margin:0px;">
+					<div class="panel-heading rcorners1">
+        				<h4 class="panel-title">Production</h4>
+        			</div> 
+
+
+					<div class="table-responsive">
+						<table class="table no-margin">
+
+					        <thead>
+					            <tr>
+					                <th style="width:20%"><p class='text-center'>Host</p></th>
+					                <th class="hidden-sm"><p class='text-center'>State</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Services</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Application Availability</p></th>
+					            </tr>
+					        </thead>
+        					<tbody>
+
+            					<tr>
+                					<td><br><span class="name">Server 1</span></td>
+									<td class="hidden-sm" style="font-size:20px"><br>
+										<div class="circle-red"></div> 
+									</td>
+              
+                					<td class="hidden-sm">
+			                  <table class="table no-margin">
+			                    <thead style="font-size:10px;">
+			                      <tr>
+			                        <th>ok</th>
+			                        <th>Warning</th>
+			                        <th>Unknown</th>
+			                        <th>Critical</th>
+			                      </tr>
+			                    </thead>
+			                    <tbody style="font-size:1.9em;">
+			                      <tr>
+			                        <td><span class="label label-success label-as-badge">156</span></td>
+			                        <td><span class="label label-warning">165</span></td>
+			                        <td><span class="label label-default">156</span></td>
+			                        <td><span class="label badge-error">156</span></td>
+			                      </tr>
+			                    </tbody>
+			                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+            
+            <tr>
+                <td> <span class="name">Server 2</span>
+
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"></div>
+                <td class="hidden-sm"> 
+ <table class="table borderless no-margin">
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label badge-error label-as-badge">SLA = 97.06 %</span></td>
+                
+            </tr>
+			<tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table  borderless no-margin">
+                    
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+	</div>  
+</div>
+
+		</div>
+	</div>
+	<div class="row">
+
+		<div class="row-lg-height">
+
+		<div class='col-xs-6 col-sm-3 col-lg-6 col-lg-top'>
+			<div class="panel panel-primary" style="width:auto; margin:10px">
+				<div class="panel-heading">
+  					<h3 class="panel-title">Cloud Fabric</h3>    
+  				</div> 
+
+				<div class="panel-body"  style="margin:0px;">
+					<div class="panel-heading rcorners1">
+        				<h4 class="panel-title">Production</h4>
+        			</div> 
+
+
+					<div class="table-responsive">
+						<table class="table no-margin">
+
+					        <thead>
+					            <tr>
+					                <th style="width:20%"><p class='text-center'>Host</p></th>
+					                <th class="hidden-sm"><p class='text-center'>State</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Services</p></th>
+					                <th class="hidden-sm"><p class='text-center'>Application Availability</p></th>
+					            </tr>
+					        </thead>
+        					<tbody>
+
+            					<tr>
+                					<td><br><span class="name">Server 1</span></td>
+									<td class="hidden-sm" style="font-size:20px"><br>
+										<div class="circle-red"></div> 
+									</td>
+              
+                					<td class="hidden-sm">
+			                  <table class="table no-margin">
+			                    <thead style="font-size:10px;">
+			                      <tr>
+			                        <th>ok</th>
+			                        <th>Warning</th>
+			                        <th>Unknown</th>
+			                        <th>Critical</th>
+			                      </tr>
+			                    </thead>
+			                    <tbody style="font-size:1.9em;">
+			                      <tr>
+			                        <td><span class="label label-success label-as-badge">156</span></td>
+			                        <td><span class="label label-warning">165</span></td>
+			                        <td><span class="label label-default">156</span></td>
+			                        <td><span class="label badge-error">156</span></td>
+			                      </tr>
+			                    </tbody>
+			                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+            
+            <tr>
+                <td> <span class="name">Server 2</span>
+
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"></div>
+                <td class="hidden-sm"> 
+ <table class="table borderless no-margin">
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label badge-error label-as-badge">SLA = 97.06 %</span></td>
+                
+            </tr>
+			<tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><div class="circle-green"
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table  borderless no-margin">
+                    
+                    <tbody style="font-size:1.9em">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+
+
+        </tbody>
+    </table>
+
+	
+
+		
+		
+
+
+<!-- 			<div id="circle-red">K</div>
+		</div>
+		<div class='col-xs-6 col-sm-3 col-lg-3'>
+			<div id="circle-red">K</div>
+		</div>
+		<div class='col-xs-6 col-sm-3  col-lg-3'>
+			<div id="circle-red">K</div>
+		</div>
+		<div class='col-xs-6 col-sm-3  col-lg-3'>
+			<div id="circle-red">K</div>
+		</div>
+
+	</div><!-- End of row -->
+ 
+	
+	<!-- <div id="circle-green"></div> -->
+	
+
+</div>
+	
+</body>
+</html>
+

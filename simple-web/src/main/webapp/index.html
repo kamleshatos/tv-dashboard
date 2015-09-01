@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>CloudSole Metrics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="resources/bootstrap.css" rel="stylesheet">
+    <link href="resources/metrics.css" rel="stylesheet" media="screen">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="resources/moment.js"></script>
+    <script src="resources/easypiechart.js"></script>
+    <script src="resources/gauge.js"></script>
+    <script src="resources/chart.js"></script>
+    <script src="resources/jquery.sparklines.js"></script>
+    <script src="resources/bootstrap.js"></script>
+    <script src="resources/metrics-plugins.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="resources/respond.min.js"></script>
+    <script src="resources/excanvas.min.js"></script>
+    <![endif]-->
+
+    <script src="resources/sockjs.js"></script>
+    <script src="resources/stomp.js"></script>
+
+    <script>
+        var themeColour = 'black';
+
+    </script>
+    <script src="resources/metrics.js"></script>
+    <script src="resources/app.js"></script>
+<style>
+.badge-danger {
+  background-color: #d43f3a;
+}
+
+.badge-warning {
+  background-color: #d58512;
+}
+
+.badge-success {
+  background-color: #398439;
+}
+
+.badge-error {
+  background-color: #b94a48;
+}
+
+.badge-info {
+  background-color: #269abc;
+}
+
+.badge-inverse {
+  background-color: #333333;
+}
+</style>  
+
+</head>
+<body class="black">
+
+
+<div class="container" style="font-size:1.5em; color: #1E1C1C">
+<div class="panel panel-primary" style="width:auto; margin:20px" >
+    <div class="panel-heading">
+  	<h3 class="panel-title">
+  		Cloud Foundry
+    </h3>    
+  </div>     
+	<div class="panel-body"  style="margin:0px;">
+<div class="table-responsive">
+    <table class="table no-margin">
+        <thead>
+            <tr>
+                <th style="width:10%">Name</th>
+                <th style="width:25%" class="hidden-sm">State</th>
+                <th style="width:50%" class="hidden-sm">Services</th>
+                <th style="width:20%" class="hidden-sm">Application Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span>
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+            <tr>
+                <td> <span class="name">Server 2</span>
+
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span></td>
+                <td class="hidden-sm"> 
+ <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label badge-error label-as-badge">SLA = 97.06 %</span></td>
+                
+            </tr>
+			<tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span>
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+	</div>  
+</div>
+
+<div class="panel panel-primary" style="width:auto; margin:20px" >
+    <div class="panel-heading">
+  	<h3 class="panel-title">
+  		Compose
+    </h3>    
+  </div>     
+	<div class="panel-body"  style="margin:0px;">
+<div class="table-responsive">
+    <table class="table no-margin">
+        <thead>
+            <tr>
+                <th style="width:10%">Name</th>
+                <th style="width:25%" class="hidden-sm">State</th>
+                <th style="width:50%" class="hidden-sm">Services</th>
+                <th style="width:20%" class="hidden-sm">Application Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span>
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+            <tr>
+                <td> <span class="name">Server 2</span>
+
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span></td>
+                <td class="hidden-sm"> 
+ <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label badge-error label-as-badge">SLA = 97.06 %</span></td>
+                
+            </tr>
+			<tr>
+                <td> <span class="name">Server 1</span>
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success">100</span>
+                  <span style ="margin:0 2px 0 2px"class="label label-warning">15</span>
+                  <span class="label badge-error">45</span>
+              </td>
+              
+                <td class="hidden-sm">
+                  <table class="table no-margin">
+                    <thead>
+                      <tr>
+                        <th>ok</th>
+                        <th>Warning</th>
+                        <th>Unknown</th>
+                        <th>Critical</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size:20px;">
+                      <tr>
+                        <td><span class="label label-success label-as-badge">156</span></td>
+                        <td><span class="label label-warning">165</span></td>
+                        <td><span class="label label-default">156</span></td>
+                        <td><span class="label badge-error">156</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 
+                  
+                </td>
+                <td class="hidden-sm" style="font-size:20px"><span class="label label-success label-as-badge">SLA = 99.99%</span></td>
+                
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+	</div>  
+</div>
+
+
+</div> <!-- //end container -->
+
+</body>
+</html>
+<!-- Localized -->
